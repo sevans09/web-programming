@@ -34,7 +34,7 @@ p {
     background: white;
     transition: .4s;
     font-size: 30px;
-    outline-color: #424242;
+    outline-color: white;
     outline-style: solid;
 }
 
