@@ -38,14 +38,4 @@ p {
     outline-style: solid;
 }
 
-.square-box>span{
-    border-bottom: solid 2px #FFF;
-    border-top: solid 2px #FFF;
-}
-
-.square-box:hover span {
-    padding: 0.1em 0;
-}
-
-
 
