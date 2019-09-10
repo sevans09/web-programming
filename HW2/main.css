@@ -1,0 +1,41 @@
+
+body {
+  font-family:  Helvetica, Arial, Sans-Serif;
+  text-align: center;
+  color: white;
+  font-size: 28px;
+}
+
+h2 {
+  font-family: 'Josefin Sans' sans-serif;
+  text-align: center;
+  color: #424242;
+  font-size: 28px;
+}
+
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  margin-top: 40px;
+  font-size: 48px;
+}
+
+p {
+  margin-top: 80px;
+}
+
+.square-box {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 1em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: white;
+    transition: .4s;
+    font-size: 30px;
+    outline-color: white;
+    outline-style: solid;
+}
+
+
