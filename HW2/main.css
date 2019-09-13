@@ -104,9 +104,9 @@ p {
 }
 
 .header a.logo {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
-  text-shadow: -1px -1px 0 #424242, 1px -1px 0 #424242, -1px 1px 0 #424242, 1px 1px 0 #424242;
+  text-shadow: -.5px -.5px 0 #424242, .5px -.5px 0 #424242, -.5px .5px 0 #424242, .5px .5px 0 #424242;
 }
 
 .header a:hover {
@@ -115,7 +115,7 @@ p {
 }
 
 .header a.active {
-  background-color: #424242;
+  background-color: #f0f5f5;
   color: #424242;
 }
 
