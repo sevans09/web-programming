@@ -85,9 +85,10 @@ p {
 }
 
 .header {
+  border-radius: 20px;
   overflow: hidden;
   background-color: #d1e0e0;
-  padding: 20px 15px;
+  padding: 20px 15px
 }
 
 .header a {
