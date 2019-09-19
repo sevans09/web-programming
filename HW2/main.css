@@ -110,7 +110,6 @@ p {
 .header a:hover {
   color: #424242;
   background-color: #85adad
-  position: sticky;
 }
 
 .header a.active {
