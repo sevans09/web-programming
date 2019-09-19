@@ -31,6 +31,7 @@ p {
 }
 
 .page-header {
+    position: absolute;
     background-color: white;
     top: 0;
     left: 0;
@@ -84,7 +85,6 @@ p {
 }
 
 .header {
-  position: fixed; /* Set the navbar to fixed position */
   border-radius: 20px;
   overflow: hidden;
   background-color: #d1e0e0;
