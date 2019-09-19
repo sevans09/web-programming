@@ -44,15 +44,18 @@ p {
 
 .page-header * {
     display: inline;
+    position: sticky;
 }
 
 .page-header li {
     margin: 20px;
+    position: sticky;
 }
 
 .page-header li a {
     color: black;
     text-decoration: none;
+    position: sticky;
 }
 
 .square-box {
@@ -89,9 +92,11 @@ p {
   overflow: hidden;
   background-color: #d1e0e0;
   padding: 20px 15px
+  position: sticky;
 }
 
 .header a {
+  position: sticky;
   float: left;
   color: #424242;
   text-align: center;
@@ -105,11 +110,13 @@ p {
 .header a.logo {
   font-size: 40px;
   font-weight: bold;
+  position: sticky;
 }
 
 .header a:hover {
   color: #424242;
   background-color: #85adad
+  position: sticky;
 }
 
 .header a.active {
