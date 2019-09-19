@@ -1,0 +1,43 @@
+<!-- Your assignment is to create an XML document to represent a set list for a band.  
+Each entry should have space to describe the artist(s), title, music genre, and year the song was released.
+
+Your file must include at least 10 songs.  The data must be real, but you can use any artist.
+
+Create a CSS file for aesthetic display of the data.
+
+Note:  You are NOT required to produce DTD, schema, or XSL files, but you may give it a shot if you want 
+to explore this technology. (Extra credit may be in order if your work is exemplary).
+ -->
+
+<grid title="Classes">
+    <group name="Assignment">
+        <section>       
+            <title points="35">LargeNumber Class</title>
+            <item points="2">Blank</item>
+        </section>
+    </group>
+    <group name="Compiling and Memory">
+        <section>
+            <title points="5">Compiling and Memory</title>
+            <item points="0">Blank/item>
+        </section>
+    </group>
+    <group name="Functionality">
+        <section>
+            <title points="30">Functional Correctness</title>
+            <item points="2">Blank</item>
+        </section>
+    </group>
+    <group name="Code Style and Internal Documentation">
+        <section>
+            <title points="10">Coding Style</title>
+            <item points="3">Blank</item>
+        </section>
+    </group>
+    <group name="README">
+        <section>
+            <title points="10">README</title>
+            <item points="1">Blank</item>
+        </section>
+    </group>
+</grid>
