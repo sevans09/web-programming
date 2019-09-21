@@ -12,6 +12,6 @@ Created a mockup of a given template page.
 Hosted [here](http://sevans09.github.io/web-programming/HW3a).
 
 My version:
-![]( IMG_3493.jpeg){ width=50% height=50% }
+![]( IMG_3493.jpeg){ width=25% height=25% }
 Template:
-![]( IMG_3494.jpeg){ width=50% height=50% }
+![]( IMG_3494.jpeg){ width=25% height=25% }
