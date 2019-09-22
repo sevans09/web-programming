@@ -1,43 +1,66 @@
-<!-- Your assignment is to create an XML document to represent a set list for a band.  
-Each entry should have space to describe the artist(s), title, music genre, and year the song was released.
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/css" href="main.css"?>
 
-Your file must include at least 10 songs.  The data must be real, but you can use any artist.
+<Setlist>
+    <Listing type = "song">
+        <Artist>Lil Dicky</Artist>
+        <Title>Short Kings Anthem</Title>
+        <Genre>Pop</Genre>
+        <Year>2019</Year>
+    </Listing>
+    <Listing type = "song">
+        <Artist>Lil Dicky</Artist>
+        <Title>Earth</Title>
+        <Genre>Pop</Genre>
+        <Year>2019</Year>
+    </Listing>
+    <Listing type = "song">
+        <Artist>Professional Rapper</Artist>
+        <Title>The Antagonist</Title>
+        <Genre>Rap</Genre>
+        <Year>2015</Year>
+    </Listing>
+    <Listing type = "song">
+        <Artist>Lil Dicky</Artist>
+        <Title>Short Kings Anthem</Title>
+        <Genre>Pop</Genre>
+        <Year>2019</Year>
+    </Listing>
+    <Listing type = "song">
+        <Artist>Professional Rapper</Artist>
+        <Title>$ave Dat Money</Title>
+        <Genre>Rap</Genre>
+        <Year>2015</Year>
+    </Listing>
+    <Listing type = "song">
+        <Artist>Fetty Wap</Artist>
+        <Title>Trap Queen</Title>
+        <Genre>Rap</Genre>
+        <Year>2014</Year>
+    </Listing>
+    <Listing type = "song">
+        <Artist>Lil Dicky</Artist>
+        <Title>Freaky Friday</Title>
+        <Genre>Pop</Genre>
+        <Year>2018</Year>
+    </Listing>
 
-Create a CSS file for aesthetic display of the data.
-
-Note:  You are NOT required to produce DTD, schema, or XSL files, but you may give it a shot if you want 
-to explore this technology. (Extra credit may be in order if your work is exemplary).
- -->
-
-<grid title="Classes">
-    <group name="Assignment">
-        <section>       
-            <title points="35">LargeNumber Class</title>
-            <item points="2">Blank</item>
-        </section>
-    </group>
-    <group name="Compiling and Memory">
-        <section>
-            <title points="5">Compiling and Memory</title>
-            <item points="0">Blank/item>
-        </section>
-    </group>
-    <group name="Functionality">
-        <section>
-            <title points="30">Functional Correctness</title>
-            <item points="2">Blank</item>
-        </section>
-    </group>
-    <group name="Code Style and Internal Documentation">
-        <section>
-            <title points="10">Coding Style</title>
-            <item points="3">Blank</item>
-        </section>
-    </group>
-    <group name="README">
-        <section>
-            <title points="10">README</title>
-            <item points="1">Blank</item>
-        </section>
-    </group>
-</grid>
+    <Listing type = "song">
+        <Artist>The Lonely Island</Artist>
+        <Title>Like a Boss</Title>
+        <Genre>Pop</Genre>
+        <Year>2009</Year>
+    </Listing>
+    <Listing type = "song">
+        <Artist>The Lonely Island</Artist>
+        <Title>Threw It On The Ground</Title>
+        <Genre>Pop</Genre>
+        <Year>2011</Year>
+    </Listing>
+    <Listing type = "song">
+        <Artist>The Lonely Island</Artist>
+        <Title>We Like Sportz</Title>
+        <Genre>Pop</Genre>
+        <Year>2009</Year>
+    </Listing>
+</Setlist>
