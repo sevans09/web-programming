@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript</title>
+</head>
+
+<body>
+<h1>Welcome to the lottery!</h1>
+	<script language="javascript">
+		var array = [];
+		for (i = 0; i < 5; i++) {
+			var x = Math.floor(Math.random() * Math.floor(48) + 1);
+			array[i] = x;
+		}
+		x = Math.floor(Math.random() * Math.floor(18) + 1);
+		array[5] = x;
+		document.write("<h3>Your numbers are: </h3>");
+		for (i = 0; i < 6; i++) {
+			document.write(array[i]);
+			document.write(" ");
+		}
+		document.write("<h3>Your sorted numbers are: </h3>");
+		array = array.sort(function (a, b) {return a - b});
+
+		for (i = 0; i < 6; i++) {
+			document.write(array[i]);
+			document.write(" ");
+		}		
+	</script> 
+</body>
+</html>
