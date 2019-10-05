@@ -9,10 +9,10 @@
 	<script language="javascript">
 		var array = [];
 		for (i = 0; i < 5; i++) {
-			var x = Math.floor(Math.random() * Math.floor(48) + 1);
+			var x = Math.floor(Math.random() * Math.floor(47) + 1);
 			array[i] = x;
 		}
-		x = Math.floor(Math.random() * Math.floor(18) + 1);
+		x = Math.floor(Math.random() * Math.floor(17) + 1);
 		array[5] = x;
 		document.write("<h3>Your numbers are: </h3>");
 		for (i = 0; i < 6; i++) {
@@ -28,7 +28,8 @@
 		}		
 	</script> 
 
-<br \><br \><form>
+<br \><br \>
+	<form>
 		Enter your 5 numbers separated by spaces:<br \>
 		<input type="text" id = "userInput" name="firstname"><br \>
 		Enter your Lucky Ball Number:<br \>
@@ -38,9 +39,10 @@
 	 	</form>
 	  	<script language="javascript">
 			var ray = document.getElementById("userInput").value;
+			alert(ray);
 			var luckyNum = document.getElementById("luckyBall").value;
-			document.write(ray);
-			document.alert(luckyNum);
+			// document.write(ray);
+			// document.alert(luckyNum);
 			console.log(ray);
 		</script>
 </body>
