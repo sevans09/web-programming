@@ -1,0 +1,95 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript</title>
+</head>
+
+<body>
+<h1>Enter two numbers to see if they are amicable.</h1>
+
+	<form id="myForm">
+	<input type="number" id="number1"> 
+	<input type="number" id="number2">
+	<input type="button" name="button" onclick="getData()" value="Submit">
+	</form>
+
+<script language="javascript">
+
+function getData(){
+    var data = [];
+    data[0] = myForm.number1.value;
+    data[1] = myForm.number2.value;
+    var firstFactors = getFactors(data[0]);
+    var secondFactors = getFactors(data[1]);
+    var factorSumNum1 = addFactors(firstFactors);
+    var factorSumNum2 = addFactors(secondFactors);
+    document.write("<br \>")
+    document.write("The sum of the factors of number 1 is " + factorSumNum1);
+    document.write(" and the sum of the factors of number 2 is " + factorSumNum2 + ".");
+    if (factorSumNum1 == data[1] && factorSumNum2 == data[0]) {
+    	document.write("<br \>");
+    	document.write("<br \>");
+    	document.write("Amicable numbers!");
+    } else {
+    	document.write("<br \>");
+    	document.write("<br \>");
+    	document.write("Not amicable numbers.");
+    }
+	return data;   
+}
+
+function isFactor(number, testNum){
+	if (number % testNum == 0) {
+		return true;
+	} else {
+		return false;
+	} 
+}
+
+// if (isFactor(2,1) == true) {
+// 	console.log('working is factor');
+// } else {
+// 	console.log('not working');
+// }
+
+function showFactors(data) {
+	data.forEach(function (item, index) {
+  		document.write(item);
+  		document.write("<br \>");
+  	})
+};
+
+// var numTest = [1, 17, 23];
+// showFactors(numTest);
+
+function addFactors(data) {
+	var sum = 0;
+	data.forEach(function (item, index) {
+		sum += item;
+  	})
+  	return sum;
+}
+
+// var numTest = [1, 17, 23];
+// addFactors(numTest);
+
+
+function getFactors(number){
+  var toReturn = [],
+  div = 0;
+
+  for(var i = 1; i < number; i++ ){
+    div = number/i;
+
+    if(div === Math.floor(div)){
+    	toReturn.push(i); 
+    }
+  }
+  return toReturn;
+}
+
+// document.write(getFactors(9));
+// document.write(getFactors(21));
+// document.write(getFactors(23)); 
+
+</script>
