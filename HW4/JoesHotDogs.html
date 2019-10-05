@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript</title>
+</head>
+
+<body>
+<h1>Welcome to the Joe's Hotdog Stand!</h1>
+<h2>We sell hotdogs for $3.25, french fries for $2.00, and drinks for $1.50.</h2>
+</body>
+</html>
+
+<script language="javascript">
+	var prices = {'hotdogs': 3.25, 'frenchfries': 2.00, 'drinks': 1.50};
+	var order = {'hotdogs': 0, 'frenchfries': 0, 'drinks': 0};
+
+	console.log(prices['hotdogs']); 
+</script>
+<h3> Enter your order below </h3>
+	<form id = "myform">
+		Number of hot dogs: <br \>
+		<input type="number" id = "hotDogNum" name="hotDogNum"><br \>
+		Number of french fries:<br \>
+		<input type="number" id = "frenchFryNum" name="frenchFryNum"><br \>
+		Number of drinks:<br \>
+		<input type="number" id = "drinkNum" name="drinkNum"><br \>
+
+		<input type="button" name="button" onclick="getData()" value="Order">
+	</form>
+
+<script language="javascript">
+	function getData(){
+		order['hotdogs'] = myform.hotDogNum.value;
+		order['frenchfries'] = myform.frenchFryNum.value;
+		order['drinks'] = myform.drinkNum.value;
+		var rawTotal = (order['hotdogs'] * 3.25) + (order['frenchfries'] * 2) + (order['drinks'] * 1.5)
+		
+		if (rawTotal > 20) {
+			document.write("You've received Joe's Special! Your previous total was " + rawTotal + ". \n");
+			rawTotal =  0.9 * rawTotal;
+			document.write("Your new total is: " + rawTotal.toFixed(2) + ". \n");
+		}
+		var afterTax = rawTotal * 1.0625;
+		document.write("Your subtotal is " + rawTotal.toFixed(2) + " and after tax it is " + afterTax.toFixed(2) + ".\n");
+		var numHotDogs = order['hotdogs'];
+		var numFrenchFries = order['frenchfries'];
+		var numDrinks = order['drinks'];
+		document.write("<br \>")
+		document.write("You ordered " + numHotDogs + " hot dogs and " + numFrenchFries + " french fries and ");
+		document.write("and " + numDrinks + " drinks.");
+	}	
+
+</script>
