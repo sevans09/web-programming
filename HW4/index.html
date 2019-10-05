@@ -19,6 +19,7 @@
 			document.write(array[i]);
 			document.write(" ");
 		}
+		document.write("<h4>The last value, " + array[5] +", is your Lucky Ball Number. </h4>");
 		document.write("<h3>Your sorted numbers are: </h3>");
 		array = array.sort(function (a, b) {return a - b});
 
@@ -29,22 +30,63 @@
 	</script> 
 
 <br \><br \>
-	<form>
+	<form id = "nums">
 		Enter your 5 numbers separated by spaces:<br \>
-		<input type="text" id = "userInput" name="firstname"><br \>
+		<input type="text" id = "userInput" name="userNumbers"><br \>
 		Enter your Lucky Ball Number:<br \>
-		<input type="text" id = "luckyBall" name="lastname"><br \><br \>
+		<input type="number" id = "luckyBall" name="luckyBallNum"><br \><br \>
+		<input type="button" name="button" onclick="getData()" value="Submit">
+	 </form>
 
-		<button> Submit </button>
-	 	</form>
-	  	<script language="javascript">
-			var ray = document.getElementById("userInput").value;
-			alert(ray);
-			var luckyNum = document.getElementById("luckyBall").value;
-			// document.write(ray);
-			// document.alert(luckyNum);
-			console.log(ray);
-		</script>
+
+<script language="javascript">
+	function getData(){
+		var string = nums.userInput.value;
+		var luckyBall = nums.luckyBall.value;
+	    string = string.split(" ");
+		var numArray = new Array();
+		var numMatches = 0;
+		for(var i =0; i < string.length; i++){
+			var numAt = string[i];
+			var found = false;
+			for (var j = 0; j < array.length; j++) {
+				if (array[j] == numAt) {
+					found = true;
+				}
+			}
+			if (found == true) {
+				numMatches += 1;
+			}
+		}
+		if (luckyBall = array[5]) {
+			document.write("Lucky ball match!");
+		} else {
+			document.write("No lucky ball match.");
+		}
+		document.write(" Number of regular matches: " + numMatches +"<br \>");
+
+		if ((numMatches == 5) && (luckyBall = array[5])) {
+			document.write("You won the grand prize! $7,000 a week for life!");
+		} else if (numMatches == 5) {
+			document.write("You win the grand prize! $25,000 a year for life!");
+		} else if ((numMatches == 4) && (luckyBall = array[5])) {
+			document.write("You win $5000!");
+		} else if (numMatches == 4) {
+			document.write("You win $200!");
+		} else if ((numMatches == 3) && (luckyBall = array[5])) {
+			document.write("You win $150!");
+		} else if (numMatches == 3) {
+			document.write("You win $20!");
+		} else if ((numMatches == 2) && (luckyBall = array[5])) {
+			document.write("You win $25!");
+		} else if (numMatches == 2) {
+			document.write("You win $3!");
+		} else if ((numMatches == 1) && (luckyBall = array[5])) {
+			document.write("You win $6!");
+		}  else if (luckyBall = array[5]) {
+			document.write("You win $4!");
+		}
+	}	
+</script>
 </body>
-
 </html>
