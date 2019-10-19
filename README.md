@@ -24,3 +24,4 @@ Template:
 ## HW5b
 
 ## HW6
+Used JavaScript and jQuery library to build an art gallery with a fade-in effect on hover, and information display on click. Hosted [here](https://sook-hee.com/web-programming/HW6/).
