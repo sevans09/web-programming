@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <meta charset="utf-8">
 <title>HTML 5 Doc</title>
   <style>
@@ -27,66 +28,184 @@
   </style>
 </head>
 <body>
-
+<h2 style="font-family: Bookman Old Style; color: #424242;font-size: 60px; text-align: center; text-decoration: underline">
+welcome to my art gallery
+</h2>
 
 <script language="javascript">
 
-
 let gallery = [];
 let obj1 = new Object();
-obj1.name = painting;
+obj1.name = "Content puppy with bunnies";
 obj1.price = 250;
-obj1.smallImg = ;
-obj1.largeImg = ;
+obj1.smallImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwxvQT4N7JSvoZjRbnOYudgi_dYcIJAjEeijcFDH4CzA0jCDFuzg";
+obj1.largeImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwxvQT4N7JSvoZjRbnOYudgi_dYcIJAjEeijcFDH4CzA0jCDFuzg";
 gallery.push(obj1);
 
 let obj2 = new Object();
-obj2.name = painting;
+obj2.name = "Intense bulldog";
 obj2.price = 350;
-obj2.smallImg = ;
-obj2.largeImg = ;
+obj2.smallImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwxvQT4N7JSvoZjRbnOYudgi_dYcIJAjEeijcFDH4CzA0jCDFuzg";
+obj2.largeImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwxvQT4N7JSvoZjRbnOYudgi_dYcIJAjEeijcFDH4CzA0jCDFuzg";
 gallery.push(obj2);
 
 let obj3 = new Object();
-obj3.name = drawing;
+obj3.name = "Smol puppy";
 obj3.price = 1050;
-obj3.smallImg = ;
-obj3.largeImg = ;
+obj3.smallImg = "https://cdn.shopify.com/s/files/1/2607/3582/products/cute-puppy-diamond-painting-5582302543961_530x.jpg?v=1557322886" ;
+obj3.largeImg = "https://cdn.shopify.com/s/files/1/2607/3582/products/cute-puppy-diamond-painting-5582302543961_530x.jpg?v=1557322886" ;
 gallery.push(obj3);
 
 let obj4 = new Object();
-obj4.name = drawing;
+obj4.name = "Puppies in a basket";
 obj4.price = 400;
-obj4.smallImg = ;
-obj4.largeImg = ;
+obj4.smallImg = "http://lomets.com/wp-content/uploads/2017/07/5da45a72182d0505d86c9989e1da55fe.jpg";
+obj4.largeImg = "http://lomets.com/wp-content/uploads/2017/07/5da45a72182d0505d86c9989e1da55fe.jpg";
 gallery.push(obj4);
 
 let obj5 = new Object();
-obj5.name = drawing;
+obj5.name = "H o n g r y";
 obj5.price = 450;
-obj5.smallImg = ;
-obj5.largeImg = ;
+obj5.smallImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWCRkKKRvS7qgEph7arIYOSEgmARWdVXBZfvnTKeU54FgHRgGk";
+obj5.largeImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWCRkKKRvS7qgEph7arIYOSEgmARWdVXBZfvnTKeU54FgHRgGk";
 gallery.push(obj5);
 
+var imgOneSrc = gallery[0].smallImg;
 
 </script>
 
 
-<div class="images" style="padding-left: 3%; margin-left: auto; margin-right: auto; position: absolute; vertical-align: center; display: inline-block; padding-top: 10%">
+<div class="images" style="padding-left: 3%; margin-left: auto; margin-right: auto; position: absolute; vertical-align: center; display: inline-block; padding-top: 4%">
   <div class="column" style= "align-content: center; vertical-align: middle">
-    <img class="galleryImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp5W19p3Ui5oxK1Fv3O1lXZUMmfdLkUGhTYr3CkBnAouHcEUWf" style="width:13%; height: 130px; padding-right: 3%; padding-left: 3%">
-    <img class="galleryImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwxvQT4N7JSvoZjRbnOYudgi_dYcIJAjEeijcFDH4CzA0jCDFuzg" style="width:13%; height: 130px; padding-right: 3%; padding-left: 3%">
-    <img class="galleryImg" src="https://cdn.shopify.com/s/files/1/2607/3582/products/cute-puppy-diamond-painting-5582302543961_530x.jpg?v=1557322886" style="width:13%; height: 130px; padding-right: 3%; padding-left: 3%">
-    <img class="galleryImg" src="http://lomets.com/wp-content/uploads/2017/07/5da45a72182d0505d86c9989e1da55fe.jpg" style="width:13%; height: 130px; padding-right: 3%; padding-left: 3%">
-    <img class="galleryImg" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWCRkKKRvS7qgEph7arIYOSEgmARWdVXBZfvnTKeU54FgHRgGk" style="width:13%; height: 130px; padding-right: 3%; padding-left: 3%">
-    
+
+    <img id="img1" class="galleryImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp5W19p3Ui5oxK1Fv3O1lXZUMmfdLkUGhTYr3CkBnAouHcEUWf" style="width:13%; height: 130px; padding-right: 3%; padding-left: 3%"> 
+
+    <img id="img2" class="galleryImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwxvQT4N7JSvoZjRbnOYudgi_dYcIJAjEeijcFDH4CzA0jCDFuzg" style="width:13%; height: 130px; padding-right: 3%; padding-left: 3%">
+
+    <img id="img3" class="galleryImg" src="https://cdn.shopify.com/s/files/1/2607/3582/products/cute-puppy-diamond-painting-5582302543961_530x.jpg?v=1557322886" style="width:13%; height: 130px; padding-right: 3%; padding-left: 3%">
+
+    <img id="img4" class="galleryImg" src="http://lomets.com/wp-content/uploads/2017/07/5da45a72182d0505d86c9989e1da55fe.jpg" style="width:13%; height: 130px; padding-right: 3%; padding-left: 3%">
+
+    <img id="img5" class="galleryImg" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWCRkKKRvS7qgEph7arIYOSEgmARWdVXBZfvnTKeU54FgHRgGk" style="width:13%; height: 130px; padding-right: 3%; padding-left: 3%">
+      
   </div>
 
-  <div class = "enlarged">
-    Display larger images here
-  </div>
+</div>
+<br \><br \>
+
+
+
+<div class = "enlarged">
+  <script language="javascript">
+
+    var itemOne = gallery[0];
+    var itemTwo = gallery[1];
+    var itemThree = gallery[2];
+    var itemFour = gallery[3];
+    var itemFive = gallery[4];
+
+
+    function tempAlert(msg,duration)
+    {
+      var el = document.createElement("div");
+      el.setAttribute("style","font-family: Bookman Old Style; color: #424242;font-size: 18px; text-align: center; text-decoration: underline");
+      el.innerHTML = msg;
+      setTimeout(function(){
+      el.parentNode.removeChild(el);
+      },duration);
+      document.body.appendChild(el);
+    }    
+
+
+
+    $('#img1').hover(function() {
+      var newSrc  = $(this).clone()
+      $("#spot1").attr("src",newSrc);
+      var toAppend = $(this).clone();
+      $(toAppend).appendTo("#spot1").fadeIn(100000);
+      $(toAppend).animate({ width: "40%", height: "40%" });
+     }).mouseleave( function () {
+        $("#spot1").empty( );
+    }).click( function() {
+      $('#img1').empty();
+      tempAlert("Name: " + itemOne.name + " <br /> Price: " + itemOne.price, 5000);
+    });
+
+
+    $('#img2').hover(function() {
+      var newSrc  = $(this).clone()
+      $("#spot2").attr("src",newSrc);
+      var toAppend = $(this).clone();
+      $(toAppend).appendTo("#spot2").fadeIn(100000);
+      $(toAppend).animate({ width: "40%", height: "40%" });
+     }).mouseleave( function () {
+        $("#spot2").empty( );
+    }).click( function() {
+        tempAlert("Name: " + itemTwo.name + " <br /> Price: " + itemTwo.price, 5000);
+    });
+
+
+    $('#img3').hover(function() {
+      var newSrc  = $(this).clone()
+      $("#spot3").attr("src",newSrc);
+      var toAppend = $(this).clone();
+      $(toAppend).appendTo("#spot3").fadeIn(100000);
+      $(toAppend).animate({ width: "40%", height: "40%" });
+     }).mouseleave( function () {
+        $("#spot3").empty( );
+    }).click( function() {
+        tempAlert("Name: " + itemThree.name + " <br /> Price: " + itemThree.price, 5000);
+    });
+
+
+    $('#img4').hover(function() {
+      var newSrc  = $(this).clone()
+      $("#spot4").attr("src",newSrc);
+      var toAppend = $(this).clone();
+      $(toAppend).appendTo("#spot4").fadeIn(100000);
+      $(toAppend).animate({ width: "40%", height: "40%" });
+     }).mouseleave( function () {
+        $("#spot4").empty( );
+    }).click( function() {
+        tempAlert("Name: " + itemFour.name + " <br /> Price: " + itemFour.price, 5000);
+    });
+
+
+    $('#img5').hover(function() {
+      var newSrc  = $(this).clone()
+      $("#spot5").attr("src",newSrc);
+      var toAppend = $(this).clone();
+      $(toAppend).appendTo("#spot5").fadeIn(100000);
+      $(toAppend).animate({ width: "40%", height: "40%" });
+     }).mouseleave( function () {
+        $("#spot5").empty( );
+    }).click( function() {
+        tempAlert("Name: " + itemFive.name + " <br /> Price: " + itemFive.price, 5000);
+    });
+
+
+  </script>
 </div>
 
+
+
+<div id = "destination" style="margin-top: 14%; align-items: center; padding-left: 35%">
+  <div id = "spot1">
+    <img src = "">
+  </div>
+  <div id = "spot2">
+    <img src = "">
+  </div>
+  <div id = "spot3">
+    <img src = "">
+  </div>
+  <div id = "spot4">
+    <img src = "">
+  </div>
+  <div id = "spot5">
+    <img src = "">
+  </div>
+</div>
 
 </body>
 </html>
