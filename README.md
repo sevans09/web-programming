@@ -17,11 +17,13 @@ Template:
 <img src="IMG_3494.jpeg" width="300" height="300">
 
 ## HW4
+Part A: JavaScipt application that does a "quick pick" for a Massachusetts Lottery “Lucky for Life” game. The client can input their numbers, and are told what they won (if they are lucky). Hosted [here](https://sook-hee.com/web-programming/HW4/).
+
+Part B: Web page for a new café called “Joe’s Hotdog Stand”, which only sells three items: hotdogs ($3.25 each), French Fries ($2.00 each) and Drinks ($1.50 each). Created a simple interface for customers to make online orders, including tax and a possible discount. Hosted [here](https://sook-hee.com/web-programming/JoesHotDogs/).
 
 
 ## HW5a
-
-## HW5b
+Simple JavaScript application that determines if a pair of numbers is amicable (if their factors add up to each other, excluding themselves). Hosted [here](https://sook-hee.com/web-programming/HW5a/).
 
 ## HW6
 Used JavaScript and jQuery library to build an art gallery with a fade-in effect on hover, and information display on click. Hosted [here](https://sook-hee.com/web-programming/HW6/).
