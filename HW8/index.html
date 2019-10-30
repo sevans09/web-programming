@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Set List</title>
+<style type="text/css">
+	body,html {font-size: 18px;}	
+</style>
+</head>
+
+<!-- 
+Your assignment is to create a JSON to represent a set list for a cover band.  Each entry should have space to describe the artist(s), title, music genre(s), and year the song was released.
+
+Note:  your object should allow for multiple artists and multiple genre's 
+
+You must include at least 10 songs.  The data must be real.  You may reuse what you had from the XML assignment or add new ones.  You must have songs from at least 3 genres (genre could be country, rock, pop, metal, ska, etc)
+ -->
+
+<body>
+	<script language="javascript">
+
+  function Song(artist, title, genre, year)
+  {
+     this.artist = artist;
+     this.title = title;
+     this.genre = genre;
+     this.year = year;
+  }
+
+  function serializedWrite(song)
+  {
+    serialized = JSON.stringify(song);
+    document.write (serialized + "<br/>")
+  }
+
+  function parsedWrite(data)
+  {
+    var parsed = JSON.parse(data);
+    document.write(parsed.artist + "<br/>");
+  }
+
+  song1 = new Song("Lil Dicky", "Short Kings Anthem", "Pop", 2019);
+  song2 = new Song("Lil Dicky", "Earth", "Pop", 2019);
+  song3 = new Song("Professional Rapper", "The Antagonist", "Rap", 2015);
+  song4 = new Song("Lil Nas X", "Old Town Road", "Country", 2019);
+  song5 = new Song("Professional Rapper", "$ave Dat Money", "Rap", 2015);
+  song6 = new Song("Fetty Wap", "Trap Queen", "Rap", 2014);
+  song7 = new Song("The Lonely Island", "Like A Boss", "Pop", 2009);
+  song8 = new Song("Lil Dicky", "Freaky Friday", "Pop", 2018);
+  song9 = new Song("The Lonely Island", "Threw It On The Ground", "Pop", 2011);
+  song10 = new Song("The Lonely Island", "We Like Sportz", "Pop", 2009);
+
+  var setList = [song1, song2, song3, song4, song5, song6, song7, song8, song9, song10];
+  var serialized = [];
+
+  for (i = 0; i < setList.length; i++) { 
+    serialized[i] = (setList[i]);
+    serializedWrite(setList[i]);
+  }
+  for (i = 0; i < setList.length; i++) { 
+    let JSONstring = setList[i];
+    document.write(JSONstring);
+    JSON.parse(JSONstring);
+    // parsedWrite(JSONstring);
+  }
+
+
+
+	</script>
+</body>
+</html>
