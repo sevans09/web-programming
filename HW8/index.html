@@ -5,18 +5,31 @@
 <title>Set List</title>
 <style type="text/css">
 	body,html {font-size: 18px;}	
+  .dataDiv {font-size: 15px;} 
 </style>
 </head>
 
-<!-- 
-Your assignment is to create a JSON to represent a set list for a cover band.  Each entry should have space to describe the artist(s), title, music genre(s), and year the song was released.
-
-Note:  your object should allow for multiple artists and multiple genre's 
-
-You must include at least 10 songs.  The data must be real.  You may reuse what you had from the XML assignment or add new ones.  You must have songs from at least 3 genres (genre could be country, rock, pop, metal, ska, etc)
- -->
 
 <body>
+  <form>
+    <select>
+      <option value="Pop">Pop</option>
+      <option value="Country">Country</option>
+      <option value="Rap">Rap</option>
+    </select>
+    <br><br>
+    <input type="submit">
+  </form>
+  <br>
+
+  <h4 class = "dataDiv" >
+    <h3 id="title">
+      title goes here
+    </h3>
+    
+    Parsed set list: <br \><br \>
+  </h4>
+
 	<script language="javascript">
 
   function Song(artist, title, genre, year)
@@ -31,13 +44,17 @@ You must include at least 10 songs.  The data must be real.  You may reuse what 
   {
     serialized = JSON.stringify(song);
     document.write (serialized + "<br/>")
-  }
+  };
 
   function parsedWrite(data)
   {
     var parsed = JSON.parse(data);
-    document.write(parsed.artist + "<br/>");
-  }
+    // document.getElementById('title').innerHTML += parsed.title + "<br \><br \>";
+    document.getElementById('dataDiv').innerHTML += parsed.title + "<br \><br \>";
+    document.getElementById('dataDiv').innerHTML += parsed.artist + "<br \>";
+    document.getElementById('dataDiv').innerHTML += parsed.genre + "<br \>";
+    document.getElementById('dataDiv').innerHTML += parsed.year + "<br \><br \><br \>";
+  };
 
   song1 = new Song("Lil Dicky", "Short Kings Anthem", "Pop", 2019);
   song2 = new Song("Lil Dicky", "Earth", "Pop", 2019);
@@ -50,22 +67,22 @@ You must include at least 10 songs.  The data must be real.  You may reuse what 
   song9 = new Song("The Lonely Island", "Threw It On The Ground", "Pop", 2011);
   song10 = new Song("The Lonely Island", "We Like Sportz", "Pop", 2009);
 
-  var setList = [song1, song2, song3, song4, song5, song6, song7, song8, song9, song10];
-  var serialized = [];
+  var setList = new Array();
+  setList = [song1, song2, song3, song4, song5, song6, song7, song8, song9, song10];
+  var serializedList = new Array();
 
+
+  document.write("Serialized data, not pretty to look at: <br \><br \>");
   for (i = 0; i < setList.length; i++) { 
-    serialized[i] = (setList[i]);
+    serializedList[i] = JSON.stringify(setList[i]);
     serializedWrite(setList[i]);
   }
-  for (i = 0; i < setList.length; i++) { 
-    let JSONstring = setList[i];
-    document.write(JSONstring);
-    JSON.parse(JSONstring);
-    // parsedWrite(JSONstring);
+
+  for (i = 0; i < serializedList.length; i++) { 
+    parsedWrite(serializedList[i]);
   }
 
-
-
 	</script>
+
 </body>
 </html>
