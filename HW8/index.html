@@ -1,59 +1,161 @@
 <!doctype html>
 <html>
 <head>
+
 <meta charset="utf-8">
 <title>Set List</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <style type="text/css">
-	body,html {font-size: 18px;}	
+	body,html {font-size: 20px;}	
   .dataDiv {font-size: 15px;} 
+  .column {
+    float: left;
+    width: 20%;
+    height:16vw;
+    outline-style: dotted;
+    font-family:'Open Sans', sans-serif;
+    color: white;
+    font-size: 1.6vw;
+    text-align: center;
+  }
+
+  .dropup {
+    position: relative;
+    display: inline-block;
+  }
+
+  .button {
+    background-color: #ffb3e6;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  .dropup-content {
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropup-content a {
+    color: #ffb3e6;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropup-content a:hover {
+    background-color: #3498DB;
+  }
+
+  .dropup:hover .dropup-content {
+    display: block;
+  }
+
+
 </style>
 </head>
 
 
 <body>
+  <div id="serialized">
+    <br \>
+  </div>
+
   <form>
-    <select>
-      <option value="Pop">Pop</option>
-      <option value="Country">Country</option>
-      <option value="Rap">Rap</option>
+    <br \>
+    <label>Select Genre:</label>
+    <select class="genre">
+        <option value="pop">Pop</option>
+        <option value="rap">Rap</option>
+        <option value="country">Country</option>
     </select>
-    <br><br>
-    <input type="submit">
+    <br \>
   </form>
-  <br>
 
-  <h4 class = "dataDiv" >
-    <h3 id="title">
-      title goes here
-    </h3>
-    
-    Parsed set list: <br \><br \>
-  </h4>
 
-	<script language="javascript">
+
+
+  <div class="row" style="margin-top: 40px">
+    <div class="column pop" id="column1" style="background-color: #ffb3e6; opacity: 0.92">
+      <h4 style="font-weight: lighter">  </h4>
+    </div>
+    <div class="column pop" id="column2" style="background-color: #ffb3e6; opacity: 0.92">
+      <h4 style="font-weight: lighter"> </h4>
+    </div>
+    <div class="column rap" id="column3" style="background-color: #ffb3e6; opacity: 0.92">
+      <h4 style="font-weight: lighter"> </h4>
+    </div>
+    <div class="column country" id="column4" style="background-color: #ffb3e6; opacity: 0.92">
+      <h4 style="font-weight: lighter">  </h4>
+    </div>
+    <div class="column rap" id="column5" style="background-color: #ffb3e6; opacity: 0.92">
+      <h4 style="font-weight: lighter"> </h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column rap" id="column6" style="background-color: #ffb3e6; opacity: 0.92">
+      <h4 style="font-weight: lighter">  </h4>
+    </div>
+    <div class="column pop"id="column7" style="background-color: #ffb3e6; opacity: 0.92">
+      <h4 style="font-weight: lighter"> </h4>
+    </div>
+    <div class="column pop" id="column8" style="background-color: #ffb3e6; opacity: 0.92">
+      <h4 style="font-weight: lighter"> </h4>
+    </div>
+    <div class="column pop" id="column9" style="background-color: #ffb3e6; opacity: 0.92">
+      <h4 style="font-weight: lighter">  </h4>
+    </div>
+    <div class="column pop" id="column10" style="background-color: #ffb3e6; opacity: 0.92">
+      <h4 style="font-weight: lighter"> </h4>
+    </div>
+  </div>
+
+<script language="javascript">
+  $(document).ready(function(){
+      $("select.genre").change(function(){
+        var genre = $(this).children("option:selected").val();
+        if (genre == 'rap') {
+          $('.rap').hide();        
+        }
+        else if (genre == 'pop') {
+          $('.pop').hide();      
+        }
+        else {
+          $('.country').hide();
+        }
+
+      });
+  });
+
 
   function Song(artist, title, genre, year)
   {
-     this.artist = artist;
-     this.title = title;
-     this.genre = genre;
-     this.year = year;
+    this.artist = artist;
+    this.title = title;
+    this.genre = genre;
+    this.year = year;
   }
 
   function serializedWrite(song)
   {
     serialized = JSON.stringify(song);
-    document.write (serialized + "<br/>")
+    document.getElementById('serialized').innerHTML += serialized + "<br \>";
   };
 
-  function parsedWrite(data)
+  function parsedWrite(data, idx)
   {
+    var colstring = 'column'+idx;
     var parsed = JSON.parse(data);
-    // document.getElementById('title').innerHTML += parsed.title + "<br \><br \>";
-    document.getElementById('dataDiv').innerHTML += parsed.title + "<br \><br \>";
-    document.getElementById('dataDiv').innerHTML += parsed.artist + "<br \>";
-    document.getElementById('dataDiv').innerHTML += parsed.genre + "<br \>";
-    document.getElementById('dataDiv').innerHTML += parsed.year + "<br \><br \><br \>";
+    document.getElementById(colstring).innerHTML = "<br \><br \>" + parsed.title + "<br \><br \>";
+    document.getElementById(colstring).style.fontWeight = "900";
+    document.getElementById(colstring).innerHTML += parsed.artist + "<br \>";
+    document.getElementById(colstring).innerHTML += parsed.genre + "<br \>";
+    document.getElementById(colstring).innerHTML += parsed.year + "<br \><br \><br \>";
   };
 
   song1 = new Song("Lil Dicky", "Short Kings Anthem", "Pop", 2019);
@@ -70,19 +172,22 @@
   var setList = new Array();
   setList = [song1, song2, song3, song4, song5, song6, song7, song8, song9, song10];
   var serializedList = new Array();
+  </script>
 
 
-  document.write("Serialized data, not pretty to look at: <br \><br \>");
+  <script language="javascript">
   for (i = 0; i < setList.length; i++) { 
     serializedList[i] = JSON.stringify(setList[i]);
     serializedWrite(setList[i]);
   }
 
   for (i = 0; i < serializedList.length; i++) { 
-    parsedWrite(serializedList[i]);
+    var idx = i + 1;
+    parsedWrite(serializedList[i], idx);
   }
 
-	</script>
+  </script>
+	
 
 </body>
 </html>
