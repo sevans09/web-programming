@@ -68,6 +68,7 @@
 
   <form>
     <br \>
+    <!-- Form with ID to get selected value with jQuery -->
     <label>Select Genre:</label>
     <select class="genre">
         <option value="pop">Pop</option>
@@ -80,6 +81,7 @@
 
 
 
+  <!-- Columns for each song to be displayed -->
   <div class="row" style="margin-top: 40px">
     <div class="column pop" id="column1" style="background-color: #ffb3e6; opacity: 0.92">
       <h4 style="font-weight: lighter">  </h4>
@@ -115,6 +117,7 @@
     </div>
   </div>
 
+<!-- Get the selected value from the form and hide all but selected -->
 <script language="javascript">
   $(document).ready(function(){
       $("select.genre").change(function(){
@@ -136,6 +139,7 @@
   });
 
 
+  // Constructor for songs
   function Song(artist, title, genre, year)
   {
     this.artist = artist;
@@ -144,12 +148,14 @@
     this.year = year;
   }
 
+  // Writes serialized JSON data
   function serializedWrite(song)
   {
     serialized = JSON.stringify(song);
     document.getElementById('serialized').innerHTML += serialized + "<br \>";
-  };
+  }
 
+  // Writes parsed JSON data
   function parsedWrite(data, idx)
   {
     var colstring = 'column'+idx;
