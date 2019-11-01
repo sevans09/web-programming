@@ -68,7 +68,7 @@
 
   <form>
     <br \>
-    <label>Select Genre To Hide:</label>
+    <label>Select Genre:</label>
     <select class="genre">
         <option value="pop">Pop</option>
         <option value="rap">Rap</option>
@@ -120,13 +120,16 @@
       $("select.genre").change(function(){
         var genre = $(this).children("option:selected").val();
         if (genre == 'rap') {
-          $('.rap').hide();        
+          $('.pop').hide();  
+          $('.country').hide();        
         }
         else if (genre == 'pop') {
-          $('.pop').hide();      
+          $('.rap').hide();      
+          $('.country').hide();  
         }
         else {
-          $('.country').hide();
+          $('.pop').hide();
+          $('.rap').hide();  
         }
 
       });
