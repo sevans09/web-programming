@@ -1,0 +1,45 @@
+
+body {
+  font-family:  Helvetica, Arial, Sans-Serif;
+  text-align: center;
+  color: white;
+  font-size: 28px;
+}
+
+.square-button {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 1em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: #424242;
+    transition: .4s;
+    font-size: 30px;
+    outline-color: #424242;
+    outline-style: solid;
+}
+
+.square-button>span{
+    border-bottom: solid 2px #FFF;
+    border-top: solid 2px #FFF;
+}
+
+.square-button:hover span {
+    padding: 0.1em 0;
+}
+
+.advice {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 1em 0.5em;
+    text-decoration: none;
+    color: #424242;
+    background: #FFF;
+    outline-color: #FFF;
+    outline-style: solid;
+    left: 1px;
+    transition: .4s;
+    font-size: 30px;
+}
