@@ -27,3 +27,12 @@ Simple JavaScript application that determines if a pair of numbers is amicable (
 
 ## HW6
 Used JavaScript and jQuery library to build an art gallery with a fade-in effect on hover, and information display on click. Hosted [here](https://sook-hee.com/web-programming/HW6/).
+
+## HW8
+
+Created a JSON to represent a set list for a cover band. Serialized the data and displayed in a table, then used jQuery to pull data from a form that allows the user to pick a genre to show only song titles from the selected genre in the table.
+Hosted [here](https://sook-hee.com/web-programming/HW8/).
+
+## HW9
+API practice using the Advice Slip API. Used AJAX to send a request to the API, retrieve data and display the data. 
+Hosted [here](https://sook-hee.com/web-programming/HW9/).
