@@ -15,7 +15,7 @@ body {
     color: #FFF;
     background: #424242;
     transition: .4s;
-    font-size: 30px;
+    font-size: 19px;
     outline-color: #424242;
     outline-style: solid;
 }
@@ -41,5 +41,25 @@ body {
     outline-style: solid;
     left: 1px;
     transition: .4s;
-    font-size: 30px;
+    font-size: 20px;
+}
+
+.infobox {
+    position: sticky;
+    color:#424242;
+    width: 45vw;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ECECEC;
+    text-align: center;
+    bottom:5%;
+    left:25%;
+    opacity:0.8;
+    font-size: 1.6vw;
+    vertical-align: middle;
+    padding-left:25px;
+    padding-right: 25px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
