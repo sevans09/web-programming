@@ -1,24 +1,27 @@
 <html lang="en">
 <head>
-<link rel="stylesheet" href="main.css">
-<meta charset="utf-8">
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<title>Advice API</title>
+	<link rel="stylesheet" href="main.css">
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 
 <body>
+  <div class="page-header">
+  </div>
+  <br><br><br><br>
     <a href="#" class="square-button" style="margin:200 auto" onClick="getAdvice()">
-      <span>Generate Advice</span>
+    	<span>Generate Advice</span>
     </a>
-  	<div class="advice"></div>
 
-  	<div class="infobox">
+	<div class="advice"></div>
+	<div class="infobox">
 		I selected the Advice Slip API, which generates random funny, quirky, and encouraging advice.
 		I found it at <a href="https://api.adviceslip.com/">this link.</a>
 		I used the GET method to get the data as a JSON object through the open URL provided by the API.
 		This API could be useful on websites promoting mental health as a fun page for people to check out, 
 		or on a "fortune cookie" type application that generates advice for the user daily.
- 	 </div>
-
+ 	</div>
 
 </body>
 </html>
@@ -26,17 +29,21 @@
 
 <script language = "javascript">
  function getAdvice() {
- 	var url = "https://api.adviceslip.com/advice";
+	/* Step 1: Make instance of request object...
+	...to make HTTP request after page is loaded*/
+	request = new XMLHttpRequest();
 
- 	// Generate a random color to change the box outline
+	// Step 2: Set the URL for the AJAX request to be the JSON file
+ 	request.open("GET", "https://api.adviceslip.com/advice", true);
+
  	var color = Math.floor(Math.random()*16777215).toString(16);
 
 	var elements = document.getElementsByClassName('square-button');
+
 	for(var i = 0; i < elements.length; i++){
 		elements[i].style.backgroundColor = color;
 	}
 
-	// Change each element's style to the random coloring.
 	var elements = document.getElementsByClassName('advice');
 	for(var i = 0; i < elements.length; i++){
 		elements[i].style.outlineColor = color;
@@ -47,13 +54,24 @@
 		elements[i].style.outlineColor = color;
 	}
 
-	// Used GET request from the URL, and parsed the JSON object 
-	// to grab the advice generated. 
- 	$.ajax(url,{success: function(data){
- 		var jsonData = JSON.parse(data);   
- 		$(".advice").text(jsonData.slip.advice);
- 	}, error: function(error){
- 		$(".error-message").text("An error occured");
- 	}})
+
+	request.onreadystatechange = function() {
+		if (request.readyState == 4 && request.status == 200) {
+			// Step 5: wait for done + success
+			result = request.responseText;
+			var jsonData = JSON.parse(result);  
+			$(".advice").text(jsonData.slip.advice);
+		}
+		else if (request.readyState == 4 && request.status != 200) {
+			$(".advice").text("Something is wrong!  Check the logs to see where this went off the rails");
+		}
+
+		else if (request.readyState == 3) {
+			$(".advice").text("Too soon!  Try again");
+		}
+
+	}
+	// Step 4: fire off the HTTP request
+	request.send();
 }
 </script>
