@@ -36,10 +36,13 @@
 	// Step 2: Set the URL for the AJAX request to be the JSON file
  	request.open("GET", "https://api.adviceslip.com/advice", true);
 
+	// Generate a random color
  	var color = Math.floor(Math.random()*16777215).toString(16);
 
+	// Reset button's background/outline color and advice class's outline 
+	// to random color
 	var elements = document.getElementsByClassName('square-button');
-
+	
 	for(var i = 0; i < elements.length; i++){
 		elements[i].style.backgroundColor = color;
 	}
