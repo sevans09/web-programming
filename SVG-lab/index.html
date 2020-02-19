@@ -47,7 +47,8 @@
 	        mouse = nodes[0]
 
 	    var piyg = d3.scaleSequential(d3.interpolatePiYG);
-	    var color = d3.scaleOrdinal().range(d3.schemeCategory20)
+// 	    var color = d3.scaleOrdinal().range(d3.schemeCategory20)
+	    var color = d3.scaleLinear().domain([1,10]).range(["#b3ecff", "#ffb3d9"])
 	    // var color = d3.scaleOrdinal(d3.schemePaired).range(20)
 
 	    mouse.radius = 0
