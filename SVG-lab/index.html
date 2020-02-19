@@ -3,34 +3,87 @@
 <head>
 	<script lang="javascript" src="jquery-3.1.0.min.js"></script>
 	<script lang="javascript" src="d3.min.js"></script>
-	<script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
-
+	<link rel="stylesheet" type="text/css" href="styles.css">
 	<style>
 		html, body {
 			padding: 0;
 			margin: 0;
 		}
-		p {
-			/*border: 1px solid powderblue;*/
+		.title {
 			padding: 50px;
 			margin-left: 24vw;
 			margin-right: 24vw;
 			margin-top: 10vw;
 			align-items: center;
 			position: absolute;
-			/*font: 'Helvetica';*/
 			font: 6vw futura, sans-serif;
-			text-decoration: underline overline #4242;
+			text-decoration: underline overline #bfbfbf;
+		}
+		p {
+			padding: 50px;
+			margin-left: 24vw;
+			margin-right: 24vw;
+			margin-top: 10vw;
+			align-items: center;
+			font: 6vw futura, sans-serif;
+			text-decoration: underline overline #bfbfbf;
 		}
 	</style>
 </head>
 <body>
+	<div class="header">
+	  <a href="#default" class="logo">Header</a>
+	  <div class="header-right">
+	    <a class="active" href="#home">Home</a>
+	    <a href="#about" id ="aboutButton">About</a>
+	    <a href="#projects" id ="projectButton">Projects</a>
+	    <a href="#experiences" id ="experiencesButton">Experiences</a>
+	    <a href="#resume">Resume</a>
+	  </div>
+	</div>
+
+	<script>
+		var width = window.innerWidth;
+		var windowHt = window.innerHeight;
+
+		$("#projectButton").click(function() {
+		    $('html,body').animate({
+		        scrollTop: $("#projects").offset().top},1500);
+		});
+		$("#aboutButton").click(function() {
+		    $('html,body').animate({
+		        scrollTop: $("#about").offset().top},1500);
+		});
+		$("#experiencesButton").click(function() {
+		    $('html,body').animate({
+		        scrollTop: $("#experiences").offset().top},1500);
+		});
+
+	</script>
 	<div id="svg-land">
-		<p>
+		<p class="title">
 			Sook-Hee Evans
 		</p>
 	</div>
-	
+
+	<div id ="about">
+		<p>
+			About
+		</p>
+	</div>
+
+	<div id ="projects">
+		<p>
+			Projects
+		</p>
+	</div>
+
+	<div id ="experiences">
+		<p>
+			Experiences
+		</p>
+	</div>
+
 	<script>
 		var width = window.innerWidth;
 		var height = window.innerHeight;
@@ -42,7 +95,7 @@
 
 		rad = height >= 600 ? 12 : 8
 
-	    var nodes = d3.range(800).map(function()
+	    var nodes = d3.range(700).map(function()
 					{ return {r: Math.random() * rad + 8}; }),
 	        mouse = nodes[0]
 
