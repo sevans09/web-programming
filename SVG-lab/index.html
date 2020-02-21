@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script lang="javascript" src="jquery-3.1.0.min.js"></script>
-	<script lang="javascript" src="d3.min.js"></script>
+	<script lang="javascript" src="js/jquery-3.1.0.min.js"></script>
+	<script lang="javascript" src="js/d3.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<style>
 		html, body {
@@ -19,7 +19,7 @@
 			font: 6vw futura, sans-serif;
 			text-decoration: underline overline #bfbfbf;
 		}
-		p {
+		.pclass {
 			padding: 50px;
 			margin-left: 24vw;
 			margin-right: 24vw;
@@ -61,25 +61,28 @@
 
 	</script>
 	<div id="svg-land">
-		<p class="title">
+<!-- 		<p class="title">
 			Sook-Hee Evans
-		</p>
+		</p> -->
+		<div id="fade" class="title">
+		    <p>​Sook-Hee Evans</p>
+		</div>
 	</div>
 
 	<div id ="about">
-		<p>
+		<p class="pclass">
 			About
 		</p>
 	</div>
 
 	<div id ="projects">
-		<p>
+		<p class="pclass">
 			Projects
 		</p>
 	</div>
 
 	<div id ="experiences">
-		<p>
+		<p class="pclass">
 			Experiences
 		</p>
 	</div>
@@ -93,9 +96,9 @@
 			.attr('height', height)
 			.style('background-color', 'white');
 
-		rad = height >= 600 ? 12 : 8
+		rad = height >= 600 ? 120 : 80
 
-	    var nodes = d3.range(700).map(function()
+	    var nodes = d3.range(100).map(function()
 					{ return {r: Math.random() * rad + 8}; }),
 	        mouse = nodes[0]
 
@@ -148,11 +151,6 @@
 	        force.alphaTarget(0.3).restart();
 	    });
 
-			// YOUR CODE SHOULD END HERE
-	
-
-
-		// YOUR CODE SHOULD END HERE
 	</script>
 </body>
 </html>
