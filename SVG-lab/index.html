@@ -18,6 +18,7 @@
 			position: absolute;
 			font: 6vw futura, sans-serif;
 			text-decoration: underline overline #bfbfbf;
+			color: white;
 		}
 		.pclass {
 			padding: 50px;
@@ -31,7 +32,7 @@
 	</style>
 </head>
 <body>
-	<div class="header">
+<!-- 	<div class="header">
 	  <a href="#default" class="logo">Header</a>
 	  <div class="header-right">
 	    <a class="active" href="#home">Home</a>
@@ -40,7 +41,7 @@
 	    <a href="#experiences" id ="experiencesButton">Experiences</a>
 	    <a href="#resume">Resume</a>
 	  </div>
-	</div>
+	</div> -->
 
 	<script>
 		var width = window.innerWidth;
@@ -94,17 +95,16 @@
 		var svg = d3.select('#svg-land').append('svg')
 			.attr('width', width)
 			.attr('height', height)
-			.style('background-color', 'white');
+			.style('background-color', 'black');
 
-		rad = height >= 600 ? 120 : 80
+		rad = height >= 600 ? 12 : 8
 
-	    var nodes = d3.range(100).map(function()
+	    var nodes = d3.range(800).map(function()
 					{ return {r: Math.random() * rad + 8}; }),
 	        mouse = nodes[0]
 
 	    var piyg = d3.scaleSequential(d3.interpolatePiYG);
-// 	    var color = d3.scaleOrdinal().range(d3.schemeCategory20)
-	    var color = d3.scaleLinear().domain([1,10]).range(["#b3ecff", "#ffb3d9"])
+	    var color = d3.scaleOrdinal().range(d3.schemeCategory20)
 	    // var color = d3.scaleOrdinal(d3.schemePaired).range(20)
 
 	    mouse.radius = 0
@@ -131,8 +131,6 @@
 	        .data(nodes.slice(1))
 	        .enter().append("circle")
 	        .attr("r", function(d) { return d.r; })
-	        // 10 is purpley
-	        // want 11-15
 	        .style("fill", function(d, i) { return color((i+5) % 10 ); });
 
 			//at each iteration, move circles
@@ -150,7 +148,6 @@
 					//reset the force simulation
 	        force.alphaTarget(0.3).restart();
 	    });
-
 	</script>
 </body>
 </html>
